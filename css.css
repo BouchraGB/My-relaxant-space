@@ -1,0 +1,353 @@
+html{
+    overflow-x: hidden;
+}
+
+.myheader{
+  font-family: 'Brush Script MT', cursive;
+  font-size: 70px;
+
+}
+
+
+.mycontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ededed;
+}
+.menu-button {
+    transition: fill 500ms;
+}
+.outer-circle {
+    transform-origin: 60px 60px;
+    transition: transform 2s cubic-bezier(0.62, 0.005, 0, 1.005);
+}
+.button {
+    max-width: 12rem;
+    background: none;
+    border: 0 none;
+    font-size: 0;
+    cursor: pointer;
+}
+.button svg {
+    width: 100%;
+    height: auto;
+}
+.button:hover .menu-button {
+    fill: red;
+}
+.button:hover .outer-circle {
+    transform: rotate(360deg);
+}
+/*//////////////////////////////////////////*/
+p {
+ color: #fff;
+ font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+ font-size: 1em;
+ font-weight: 400;
+}
+p span {
+ display: inline-block;
+ position: relative;
+ transform-style: preserve-3d;
+ perspective: 500;
+ -webkit-font-smoothing: antialiased;
+}
+p span::before,
+p span::after {
+ display: none;
+ position: absolute;
+ top: 0;
+ left: -1px;
+ transform-origin: left top;
+ transition: all ease-out 0.3s;
+ content: attr(data-text);
+}
+p span::before {
+ z-index: 1;
+ color: rgba(0,0,0,0.2);
+ transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+p span::after {
+ z-index: 2;
+ color: #684da3;
+ text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0,0,0,0.8);
+ transform: rotateY(-40deg);
+}
+p span:hover::before {
+ transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+p span:hover::after {
+ transform: rotateY(-10deg);
+}
+p span + span {
+ margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+ p {
+   font-size: 2em;
+ }
+ p span::before,
+ p span::after {
+   display: block;
+ }
+}
+@media (min-width: 30em) {
+ p {
+   font-size: 3em;
+ }
+}
+@media (min-width: 40em) {
+ p {
+   font-size: 5em;
+ }
+}
+@media (min-width: 60em) {
+ p {
+   font-size: 4em;
+ }
+}
+html,
+body {
+ margin: 0;
+ padding: 0;
+ height: 100%;
+}
+.back {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #684da3;
+ height: 550px;
+}
+
+
+/*////////////////////////////////////////////////*/
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ededed;
+}
+.loader {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
+}
+.circle {
+    fill: none;
+    stroke-width: 3.5;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+}
+.loader:hover .circle:nth-of-type(1) {
+    stroke-dasharray: 550px;
+}
+.loader:hover .circle:nth-of-type(2) {
+    stroke-dasharray: 500px;
+}
+.loader:hover .circle:nth-of-type(3) {
+    stroke-dasharray: 450px;
+}
+.loader:hover .circle:nth-of-type(4) {
+    stroke-dasharray: 300px;
+}
+.loader:hover .circle:nth-of-type(1) {
+    animation-delay: -0.15s;
+}
+.loader:hover .circle:nth-of-type(2) {
+    animation-delay: -0.3s;
+}
+.loader:hover .circle:nth-of-type(3) {
+    animation-delay: -0.45s;
+}
+.loader:hover .circle:nth-of-type(4) {
+    animation-delay: -0.6s;
+}
+@keyframes preloader {
+    50% {
+        transform: rotate(360deg);
+   }
+}
+
+/*/////////////////////////////////////////////////////////////////////*/
+.myb{
+    opacity:0.5;
+    transform-style: preserve-3d;
+  }
+
+.myb:after {
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    background: #ff7a59;
+    border-radius: 5px;
+    content: 'Flipped';
+    transform-origin: left bottom;
+    transform: rotateX(90deg);
+} 
+
+.myb:hover {
+    transform-origin: center bottom;
+    transform: rotateX(-90deg) translateY(100%);
+  }
+
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/* .static {
+    display: grid;
+    background: white;
+}
+
+.active{
+    grid-area: 1 / 1;
+} */
+
+.containergif {
+    display: grid;
+  }
+  
+ .active, .static {
+    grid-area: 1 / 1;
+}
+ 
+.static:hover {
+ opacity:0;
+}
+
+.padding-0{
+    padding: 0;
+    padding-right:0;
+    padding-left:0;
+}
+
+.inline-div {
+    width: fit-content;
+    block-size: fit-content;
+}
+
+
+.dot {
+    height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+  }
+
+.dot:hover{
+    background-color: rgb(248, 71, 71); 
+}
+
+
+.carre {
+    height: 100px;
+    width: 100px;
+    background: red;
+    -ms-transform: rotate(45deg); /* Internet Explorer */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -webkit-transform: rotate(45deg); /* Safari et Chrome */
+    -o-transform: rotate(45deg); /* Opera */
+}
+
+.carre:hover {
+    background: rgb(0, 140, 255);
+    animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+    50% {transform: rotate(360deg);}
+}
+
+.backdiv{
+    height: 550px; 
+    /* background-image: url('gif5.gif');
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+
+
+.anidiv {
+    height: 500px; 
+    position: relative;
+}
+.hello1{
+
+    /* background-color: red; */
+    /* position: relative; */
+    color: black;
+    align-items: center;
+    justify-content: center;
+        animation: example1 12s infinite forwards;
+        /* animation-delay: 3s; */
+}
+
+.hello2{
+
+    /* background-color: red; */
+    opacity: 0;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+        animation: example1 12s infinite forwards;
+        animation-delay: 4s;
+}
+
+.hello3{
+    opacity: 0;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    /* position: relative; */
+        animation: example1 12s infinite forwards;
+        animation-delay: 8s;
+}
+
+@keyframes example1 {
+    0%   {opacity: 0; left:0px; top:0px;}
+    7%   {opacity:1;  left:0px; top:0px;}    
+    30%   {opacity: 0; left:0px; top:0px;}
+    100%   {opacity: 0; left:0px; top:0px;}
+  }
+
+  /* @keyframes example2 {
+    0%   {background-color:red; left:0px; top:0px;}
+    
+    30%   {opacity: 0; left:0px; top:0px;}
+    100%   {opacity: 0;background-color:red; left:0px; top:0px;}
+  }
+
+  @keyframes example3 {
+    0%   {background-color:red; left:0px; top:0px;}
+    
+    30%   {opacity: 0; left:0px; top:0px;}
+    100%   {opacity: 0;background-color:red; left:0px; top:0px;}
+  } */
+
+
+
+
+  .backmoti {
+      height: 550px;
+      background-color: rgb(255, 227, 185);
+  }
+
+  .motivation {
+    color: black;
+    font-family: Garamond, serif;
+    font-size: 5.5em;
+    font-weight: 400;
+   }
